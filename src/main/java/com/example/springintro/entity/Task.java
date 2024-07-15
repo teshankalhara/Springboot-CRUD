@@ -2,6 +2,7 @@ package com.example.springintro.entity;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,8 +19,13 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // auto increment
     private Long id;
     // primary key
+
+    @Column(nullable = false)
     private String taskName;
+
+    @Column(nullable = false)
     private Integer priority;
+
     private LocalDateTime dueDate;
 
     /*
