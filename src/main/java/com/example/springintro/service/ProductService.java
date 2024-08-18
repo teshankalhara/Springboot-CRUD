@@ -15,4 +15,6 @@ public interface ProductService {
     Product getByProductId(long id);
 
     Product updateProduct(Long id, Product product);
+
+    Product getProductById(Long id);
 }
