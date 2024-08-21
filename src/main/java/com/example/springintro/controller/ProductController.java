@@ -11,6 +11,8 @@ import com.example.springintro.entity.Category;
 import com.example.springintro.entity.Product;
 import com.example.springintro.service.CategoryService;
 import com.example.springintro.service.ProductService;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class ProductController {
     @Autowired
     private ProductService productService;
