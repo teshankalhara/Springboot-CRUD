@@ -13,6 +13,7 @@ import com.example.springintro.service.CategoryService;
 import com.example.springintro.service.ProductService;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -72,6 +73,12 @@ public class ProductController {
         productService.updateProduct(id, updatedProduct);
 
         return ResponseEntity.status(201).body("Product Update Ok!!");
+    }
+
+    @DeleteMapping("products/{id}")
+    public ResponseEntity<String> deleteProduct(@PathVariable Long id) {
+        productService.deleteProduct(id);
+        return ResponseEntity.status(200).body("Product Deleted!");
     }
 
 }
