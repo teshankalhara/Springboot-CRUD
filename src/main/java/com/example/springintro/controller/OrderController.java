@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,6 +17,7 @@ import com.example.springintro.entity.Product;
 import com.example.springintro.service.OrderService;
 import com.example.springintro.service.ProductService;
 
+@CrossOrigin(origins = "*")
 @RestController
 public class OrderController {
     @Autowired
