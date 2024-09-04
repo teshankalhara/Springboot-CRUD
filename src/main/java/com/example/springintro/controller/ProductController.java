@@ -35,10 +35,10 @@ public class ProductController {
 
     @GetMapping("/products/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable Long id) {
-        return ResponseEntity.status(200).body(productService.getByProductId(id));
+        return ResponseEntity.status(200).body(productService.getProductById(id));
     }
 
-    @PostMapping("products")
+    @PostMapping("/products")
     public ResponseEntity<String> createProduct(@RequestBody ProductReqDTO productDTO) {
         if (productDTO.getName() == null || productDTO.getName() == "") {
             return ResponseEntity.status(422).body("Product Name Null");
