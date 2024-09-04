@@ -24,13 +24,13 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product getByProductId(long id) {
+    public Product getProductById(Long id) {
         return productRepository.findById(id).orElse(null);
     }
 
     @Override
     public Product updateProduct(Long id, Product product) {
-        Product existingProduct = getByProductId(id);
+        Product existingProduct = getProductById(id);
         if (existingProduct != null) {
             existingProduct.setName(product.getName());
             existingProduct.setPrice(product.getPrice());
@@ -40,11 +40,6 @@ public class ProductServiceImpl implements ProductService {
             return productRepository.save(existingProduct);
         }
         return null;
-    }
-
-    @Override
-    public Product getProductById(Long id) {
-        return productRepository.findById(id).orElse(null);
     }
 
     @Override

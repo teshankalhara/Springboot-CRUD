@@ -12,8 +12,6 @@ public interface ProductService {
 
     Product createProduct(Product product);
 
-    Product getByProductId(long id);
-
     Product updateProduct(Long id, Product product);
 
     Product getProductById(Long id);

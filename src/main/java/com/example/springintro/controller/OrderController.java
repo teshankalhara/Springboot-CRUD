@@ -45,7 +45,7 @@ public class OrderController {
 
         productIds.forEach(productId -> {
             // get product by the id
-            Product product = productService.getByProductId(productId);
+            Product product = productService.getProductById(productId);
 
             // add this product to order
             if (product != null) {
